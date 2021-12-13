@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Pet Shop</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/main.css" rel="stylesheet">
+    <script src="js/donate.js"></script>
+    <script>
+        function submitForm(event){
+            var form = document.getElementById("myForm");
+            const fs = require('fs');
+            var data = fs.readFileSync('pets.json');
+            var myObject= JSON.parse(data);
+            var new_pet_name = form.pet_name.value;
+            var new_pet_Age = form.pet_Age.value;
+            var new_pet_Breed = form.pet_Breed.value;
+            var new_pet_Location = form.pet_Location.value;
+            //alert(myObject.length)
+            console.log(new_pet_name)
+            //alert(myObject)
+            var newData = {
+                            "id": 0,
+                            "name": new_pet_name,
+                            "picture": "images/scottish-terrier.jpeg",
+                            "age": new_pet_Age,
+                            "breed": new_pet_Breed,
+                            "location": new_pet_Location
+                        }
+        }
+    </script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12 col-sm-8 col-sm-push-2">
+            <h1 class="text-center"><a style="color: #333;" href="/">ABC Pet Center</a></h1>
+          <h2 class="text-center">Pet Donation</h2>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-main">
+        <form id="myForm" class="donate-pet">
+            <div class="form-group">
+            <label for="pet_name">Name</label>
+            <input class="form-control" id="pet_name"  placeholder="Enter Pet Name">
+            </div>
+            <div class="form-group">
+                <label for="pet_Age">Age</label>
+                <input class="form-control" id="pet_Age"  placeholder="Enter Pet Age">
+            </div>
+            <div class="form-group">
+                <label for="pet_Breed">Breed</label>
+                <input class="form-control" id="pet_Breed"  placeholder="Enter Pet Breed">
+            </div>
+            <div class="form-group">
+                <label for="pet_Location">Location</label>
+                <input class="form-control" id="pet_Location"  placeholder="Enter Pet Location">
+            </div>
+            <div class="form-group">
+                <label for="pet_image">Pet Image</label>
+                <input type="file" class="form-control-file" id="pet_image">
+            </div>
+            <button id="donate_button" type="button" class="btn btn-primary btn-doante">Submit</button>
+        </form>
+    </div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/web3.min.js"></script>
+    <script src="js/truffle-contract.js"></script>
+    <script src="js/app.js"></script>
+  </body>
+</html>

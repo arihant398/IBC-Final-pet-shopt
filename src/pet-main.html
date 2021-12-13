@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Pet Shop</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/main.css" rel="stylesheet">
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12 col-sm-8 col-sm-push-2">
+          <h1 class="text-center"><a style="color: #333;" href="/">ABC Pet Center</a></h1>
+        </div>
+      </div>
+
+      <div id="petsRow" class="row">
+        <!-- PETS LOAD HERE -->
+      </div>
+    </div>
+
+    <div id="petTemplate" style="display: none;">
+      <div class="col-sm-6 col-md-4 col-lg-3">
+        <div class="panel panel-info panel-pet">
+          <div class="panel-heading">
+            <h3 class="panel-title">Scrappy</h3>
+          </div>
+          <div class="panel-body">
+            <img id="img-one" alt="140x140" data-src="holder.js/140x140" class="img-rounded img-center" style="width: 100%;" src="https://animalso.com/wp-content/uploads/2017/01/Golden-Retriever_6.jpg" data-holder-rendered="true">
+            <br/><br/>
+            <strong>Breed</strong>: <span class="pet-breed">Golden Retriever</span><br/>
+            <strong>Age</strong>: <span class="pet-age">3</span><br/>
+            <strong>Location</strong>: <span class="pet-location">Warren, MI</span><br/><br/>
+            <button id="adopt_button" class="btn btn-primary btn-adopt" type="button" data-id="0">Adopt</button>
+            <button id="info_button" data-toggle="modal" data-target="#currModal" class="btn btn-primary btn-more-info" type="button" data-id="0">More Info</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="petModal" class="modal-pet">
+      <div class="modal fade" id="currModal" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title modalName" id="exampleModalLabel">Test Name</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                  <div class="col-md-5">
+                    <strong>Breed</strong>: <span class="pet-breed">Golden Retriever</span><br/><br/>
+                    <strong>Age</strong>: <span class="pet-age">3</span><br/><br/>
+                    <strong>Location</strong>: <span class="pet-location">Warren, MI</span><br/><br/>
+                    <strong>Allergies</strong>: <span class="pet-allergies">Insert data</span><br/><br/>
+                    <strong>Food Type</strong>: <span class="pet-food">Insert data</span><br/><br/>
+                    <strong>Vaccine</strong>: <span class="vaccine">Insert data</span><br/><br/>
+                  </div>
+                  <div class="col-md-7">
+                    <img id="img-two" alt="140x140" data-src="holder.js/140x140" style="width: 250px" class="img-rounded img-center" src="https://animalso.com/wp-content/uploads/2017/01/Golden-Retriever_6.jpg" data-holder-rendered="true">
+                  </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <!-- <button id="adopt_button-two" class="btn btn-primary btn-adopt" type="button" data-id="0">Adopt</button> -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/web3.min.js"></script>
+    <script src="js/truffle-contract.js"></script>
+    <script src="js/app.js"></script>
+  </body>
+</html>
